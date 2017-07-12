@@ -8,7 +8,7 @@ public class LazyRename {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		lazyRename("ic_notiCount2","ic_notificationCount2", "/Users/ssiddh/Downloads/testCopy");
+		lazyRename("ic_filter_1_white","ic_notificationCount1", "/Users/ssiddh/Downloads/testCopy/App_Resources");
 	}
 	
 	public static void lazyRename(String oldFilename, String newFilename, String baseFolder){
@@ -24,10 +24,14 @@ public class LazyRename {
 		
 		if (files.length > 0){
 			for (String s: files){
-				
 				try{
 					Path source = Paths.get(baseDir+s);
 					Path destination = source.resolveSibling(newFilename+".png");
+					if (s.contains("_2x") || s.contains("@2x")){
+						destination = source.resolveSibling(newFilename+"@2x.png");
+					}else if(s.contains("_3x") || s.contains("@3x")){
+						destination = source.resolveSibling(newFilename+"@3x.png");
+					}
 					Files.move(source, destination);
 					System.out.println("Renamed : " + source.toString() + " to : " + destination.toString());
 				}catch(Exception e){
