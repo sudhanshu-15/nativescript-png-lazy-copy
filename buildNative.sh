@@ -47,6 +47,7 @@ fi
 #TODO: tns info will be replaced by tns run
 if [ $next -eq "1" ]; then
     echo "Running tns info"
+    cd $2
     tns info
 else
     echo "Failed to run tns info"
