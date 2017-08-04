@@ -8,7 +8,7 @@ public class LazyRename {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		lazyRename("ic_filter_1_white","ic_notificationCount1", "/Users/ssiddh/Downloads/testCopy/App_Resources");
+		lazyRename("iubla","bg_institute_default", "/Users/ssiddh/sunapsis/mobile/sunapsis-iom-mobile/app/App_Resources");
 	}
 	
 	public static void lazyRename(String oldFilename, String newFilename, String baseFolder){
